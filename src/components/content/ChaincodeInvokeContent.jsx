@@ -195,8 +195,8 @@ export default class ChaincodeInvokeContent extends React.Component {
   //   });
   // }
 
-  contractChange(value) {
-    this.setState({ contract: value });
+  contractChange(event) {
+    this.setState({ contract: event.target.value });
   }
 
   fcnChange(event) {
@@ -361,7 +361,8 @@ export default class ChaincodeInvokeContent extends React.Component {
         <div style={divStyle}>
           {this.state.Common.CONTRACT_NAME}
           <div style={inputDivStyle}>
-            <Select
+            <Input type="text" value={this.state.contract} placeholder="contract name" style={inputStyle} onChange={this.contractChange} />
+            {/* <Select
               style={inputStyle}
               value={this.state.contract}
               onChange={this.contractChange}
@@ -369,7 +370,7 @@ export default class ChaincodeInvokeContent extends React.Component {
               {this.state.contractList[this.state.channel] ?
                 this.state.contractList[this.state.channel]
                   .map(city => <Option key={city}>{city}</Option>) : null}
-            </Select>
+            </Select> */}
           </div>
         </div>
 

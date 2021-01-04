@@ -16,3 +16,8 @@
 
 /resources/persistence/*.db
 !/resources/persistence/.gitkeep
+
+/client-msp
+/config.yaml
+
+/.vscode

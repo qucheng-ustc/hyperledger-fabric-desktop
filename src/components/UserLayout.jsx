@@ -95,7 +95,7 @@ export default class UserLayout extends React.Component {
 
     this.state = {
       visibleRegisterForm: false,
-      expand: false,
+      expand: true,
       peerGrpcUrl: 'grpcs://localhost:7051',
       peerEventUrl: 'grpcs://localhost:7053',
       ordererUrl: 'grpcs://localhost:7050',
@@ -494,10 +494,10 @@ export default class UserLayout extends React.Component {
               <span style={spanStyle}>&nbsp; {this.state.Common.LOGIN_ORDERER_URL}:</span>
               <Input type="text" style={InputStyle} value={this.state.ordererUrl} onChange={this.ordererChange} />
             </div>
-            <div style={divStyle}>
+            {/* <div style={divStyle}>
               <span style={spanStyle}>&nbsp; {this.state.Common.LOGIN_CA_SERVER_URL}:</span>
               <Input type="text" style={InputStyle} value={this.state.caServerUrl} onChange={this.caServerUrlChange} />
-            </div>
+            </div> */}
             <div style={divStyle}>
               <span style={spanStyle}>&nbsp; {this.state.Common.LOGIN_PEER_TLS_CA_CERT}:</span>
               <input type="file" id="tlsPeerFiles" name="tlsPeerFiles" style={fileStyle} onChange={this.tlsPeerImport} />
@@ -516,24 +516,24 @@ export default class UserLayout extends React.Component {
               <span style={spanStyle}>&nbsp; {this.state.Common.LOGIN_ORDERER_SSL_TARGET}:</span>
               <Input type="text" style={InputStyle} value={this.state.ordererSSLTarget} onChange={this.ordererSSLTargetChange} />
             </div>
-            <div style={divStyle}>
+            {/* <div style={divStyle}>
               <span style={spanStyle}>&nbsp; {this.state.Common.LOGIN_CA_SERVER_CA_CERT}:</span>
               <input type="file" id="tlsCAServerFiles" name="tlsCAServerFiles" style={fileStyle} onChange={this.tlsCAServerImport} />
               <label htmlFor="tlsCAServerFiles" style={labelStyle} ><Icon type="folder-open" theme="outlined" style={{ color: '#0083FA', padding: '0 7px 0 0' }} />&thinsp;{this.state.tlsCAServerLabel} </label>
-            </div>
-            <div style={{ margin: '10px 6px', display: this.state.expand ? 'block' : 'none' }}>
+            </div> */}
+            <div style={{ margin: '10px 6px', display: 'block' }}>
               <input type="file" id="configFiles" name="configFiles" style={fileStyle} onChange={this.configImport} />
               <label htmlFor="configFiles" style={configStyle} >
                 <Icon type="folder-open" theme="outlined" style={{ color: '#0083FA', padding: '0 7px 0 0' }} />
                 {this.state.Common.LOGIN_CONFIG}
               </label>
             </div>
-            <a style={{ marginLeft: '10px', marginRight: '200px', fontSize: 12 }} onClick={this.toggle}>
+            {/* <a style={{ marginLeft: '10px', marginRight: '200px', fontSize: 12 }} onClick={this.toggle}>
                 Collapse <Icon type={this.state.expand ? 'up' : 'down'} />
             </a>
             <a style={{ fontSize: 12 }} onClick={this.registerUser}>
                 Enroll <Icon type="user" />
-            </a>
+            </a> */}
             <div style={lastDivStyle}>
               <Button type="primary" style={buttonStyle} onClick={this.onClick}>{this.state.Common.LOGIN}</Button>
             </div>
